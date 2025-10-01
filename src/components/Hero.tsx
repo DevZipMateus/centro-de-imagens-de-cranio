@@ -1,10 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-secondary to-background pt-20">
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20">
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      ></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/85 to-primary/80"></div>
       
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
