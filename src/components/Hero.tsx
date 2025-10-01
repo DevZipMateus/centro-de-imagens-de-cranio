@@ -12,7 +12,8 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-background/60 via-background/50 to-primary/40"></div>
       
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+        <div className="max-w-4xl mx-auto bg-background/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl">
+          <div className="text-center space-y-8 animate-fade-in">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
             Centro de Imagens Cranio Faciais
           </h1>
@@ -65,6 +66,7 @@ const Hero = () => {
               <div className="text-muted-foreground">Planos aceitos</div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
