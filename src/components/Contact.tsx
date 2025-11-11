@@ -119,7 +119,7 @@ const Contact = () => {
 
             <Card className="overflow-hidden h-[500px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.5897868486947!2d-47.06352042377665!3d-22.905836637582673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8cf26e1c1e8dd%3A0x1e7f8e0c7c7c7c7c!2sRua%20Cel.%20Quirino%20Barbosa%2C%2041%20-%20Bonfim%2C%20Campinas%20-%20SP%2C%2013070-010!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                src="https://maps.google.com/maps?q=Rua+Coronel+Quirino+Barbosa,+41,+Bonfim,+Campinas+-+SP,+13070-010&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
