@@ -95,11 +95,6 @@ const Services = () => {
               <CarouselContent>
                 <CarouselItem>
                   <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={mandibula3d} alt="Imagem 3D de mandíbula" className="w-full h-full object-cover" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
                     <img src={tomografo} alt="Equipamento de tomografia computadorizada" className="w-full h-full object-cover" />
                   </div>
                 </CarouselItem>
@@ -141,6 +136,11 @@ const Services = () => {
                 <CarouselItem>
                   <div className="relative aspect-video overflow-hidden rounded-lg">
                     <img src={panoramicaDenticaoMista} alt="Radiografia panorâmica de dentição mista" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={mandibula3d} alt="Imagem 3D de mandíbula" className="w-full h-full object-cover" />
                   </div>
                 </CarouselItem>
               </CarouselContent>
