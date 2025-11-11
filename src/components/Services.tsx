@@ -38,7 +38,7 @@ const Services = () => {
               Nossos serviços
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Oferecemos uma ampla gama de exames de imagenologia odontológica com tecnologia de ponta
+              Oferecemos uma ampla gama de exames de imagenologia odontológica para auxiliar no diagnóstico do paciente.
             </p>
           </div>
 
