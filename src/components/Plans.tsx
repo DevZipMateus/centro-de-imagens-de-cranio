@@ -40,12 +40,6 @@ const Plans = () => {
                   </div>
                 ))}
               </div>
-
-              <div className="mt-8 p-6 bg-primary/5 rounded-lg border-2 border-primary/20">
-                <p className="text-center text-foreground font-medium">
-                  <span className="text-primary">Atendimento particular</span> também disponível com valores acessíveis
-                </p>
-              </div>
             </CardContent>
           </Card>
         </div>

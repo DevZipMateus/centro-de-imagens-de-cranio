@@ -60,6 +60,14 @@ const Services = () => {
             </p>
           </div>
 
+          <Card className="border-2 border-primary/20 bg-primary/5">
+            <CardContent className="pt-6">
+              <p className="text-center text-foreground font-medium">
+                <span className="text-primary">Atendimento particular</span> também disponível
+              </p>
+            </CardContent>
+          </Card>
+
           <div className="grid md:grid-cols-2 gap-6">
             {services.map((service, index) => {
               const Icon = service.icon;
