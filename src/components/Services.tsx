@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Scan, Camera, X as XRay, FileText } from "lucide-react";
+import { Scan, Camera, X as XRay, FileText, User } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import mandibula3d from "@/assets/3d-mandibula.jpg";
 import oclusal1 from "@/assets/oclusal-1.jpg";
@@ -45,6 +45,12 @@ const Services = () => {
       description: "Exames 3D de alta precisão",
       features: ["Imagem tridimensional", "Planejamento cirúrgico", "Maior precisão"],
     },
+    {
+      icon: User,
+      title: "Atendimento particular",
+      description: "Atendemos pacientes particulares",
+      features: ["Sem necessidade de plano", "Agendamento facilitado", "Qualidade garantida"],
+    },
   ];
 
   return (
@@ -60,15 +66,7 @@ const Services = () => {
             </p>
           </div>
 
-          <Card className="border-2 border-primary/20 bg-primary/5">
-            <CardContent className="pt-6">
-              <p className="text-center text-foreground font-medium">
-                <span className="text-primary">Atendimento particular</span> também disponível
-              </p>
-            </CardContent>
-          </Card>
-
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
