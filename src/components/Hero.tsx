@@ -30,7 +30,7 @@ const Hero = () => {
             >
               <a href="https://wa.me/5519981873397" target="_blank" rel="noopener noreferrer">
                 <Phone className="mr-2 h-5 w-5" />
-                Agendar consulta
+                Entre em contato
               </a>
             </Button>
             

@@ -42,6 +42,19 @@ const Contact = () => {
             </p>
           </div>
 
+          <Card className="bg-primary/5 border-primary/20">
+            <CardContent className="pt-6">
+              <div className="space-y-2 text-center">
+                <h3 className="font-semibold text-foreground text-lg mb-3">
+                  Como agendar?
+                </h3>
+                <p className="text-muted-foreground">
+                  Todos os nossos agendamentos são via telefone fixo <strong className="text-foreground">(19) 3432-7752</strong>. Não agendamos por WhatsApp. Nosso WhatsApp <strong className="text-foreground">(19) 98177-3397</strong> é disponível para contato e envio de pedidos e carteirinhas de convênios.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="space-y-6">
               {contactInfo.map((info, index) => {
@@ -126,7 +139,7 @@ const Contact = () => {
             >
               <a href="https://wa.me/5519981873397" target="_blank" rel="noopener noreferrer">
                 <Phone className="mr-2 h-5 w-5" />
-                Agendar pelo WhatsApp
+                Entre em contato
               </a>
             </Button>
           </div>
