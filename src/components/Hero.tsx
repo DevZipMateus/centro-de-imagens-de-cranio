@@ -14,12 +14,12 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto bg-background/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl">
           <div className="text-center space-y-8 animate-fade-in">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
-            Centro de Imagens Cranio Faciais
+          <h1 className="text-4xl md:text-6xl font-bold font-tahoma text-foreground leading-tight">
+            CENTRO DE IMAGENS CRÂNIO FACIAIS
           </h1>
           
           <h2 className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-            Excelência em imagenologia odontológica desde 2002, oferecendo diagnósticos precisos e atendimento especializado
+            Imaginologia Odontológica desde 2002, oferecendo diagnósticos precisos e atendimento especializado
           </h2>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
