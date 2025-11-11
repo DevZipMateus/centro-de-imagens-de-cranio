@@ -11,6 +11,10 @@ import fachada2 from "@/assets/fachada-2.jpg";
 import recepcao from "@/assets/recepcao.jpg";
 import sala1 from "@/assets/sala-1.jpg";
 import sala2 from "@/assets/sala-2.jpg";
+import equipamentoPanoramico1 from "@/assets/equipamento-panoramico-1.jpg";
+import corredorSala from "@/assets/corredor-sala.jpg";
+import equipamentoPanoramico2 from "@/assets/equipamento-panoramico-2.jpg";
+import cadeiraSalaRaioX from "@/assets/cadeira-sala-raio-x.jpg";
 
 const Gallery = () => {
   const images = [
@@ -38,6 +42,26 @@ const Gallery = () => {
       src: sala2,
       alt: "Ambiente de atendimento da clínica",
       title: "Ambiente de atendimento",
+    },
+    {
+      src: equipamentoPanoramico1,
+      alt: "Equipamento de raio-x panorâmico digital",
+      title: "Equipamento panorâmico",
+    },
+    {
+      src: corredorSala,
+      alt: "Corredor com acesso às salas de exame",
+      title: "Área de circulação",
+    },
+    {
+      src: equipamentoPanoramico2,
+      alt: "Sala com equipamento panorâmico",
+      title: "Sala de raio-x panorâmico",
+    },
+    {
+      src: cadeiraSalaRaioX,
+      alt: "Cadeira odontológica com equipamento de raio-x intra bucal",
+      title: "Sala de raio-x intra bucal",
     },
   ];
 
