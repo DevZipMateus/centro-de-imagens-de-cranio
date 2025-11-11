@@ -9,6 +9,8 @@ import {
 import fachada1 from "@/assets/hero-bg.jpg";
 import fachada2 from "@/assets/fachada-2.jpg";
 import recepcao from "@/assets/recepcao.jpg";
+import sala1 from "@/assets/sala-1.jpg";
+import sala2 from "@/assets/sala-2.jpg";
 
 const Gallery = () => {
   const images = [
@@ -26,6 +28,16 @@ const Gallery = () => {
       src: recepcao,
       alt: "Recepção do Centro de Imagens",
       title: "Recepção acolhedora",
+    },
+    {
+      src: sala1,
+      alt: "Sala de exames do Centro de Imagens",
+      title: "Sala de exames",
+    },
+    {
+      src: sala2,
+      alt: "Ambiente de atendimento da clínica",
+      title: "Ambiente de atendimento",
     },
   ];
 
