@@ -26,7 +26,7 @@ const Contact = () => {
       icon: MapPin,
       title: "Endereço",
       content: "Rua Coronel Barbosa, 41",
-      link: "https://maps.app.goo.gl/PBWTuYU8LNK8TyJr5",
+      link: "https://maps.app.goo.gl/gkzJQRGetHNtwkLC6",
     },
   ];
 
@@ -151,7 +151,7 @@ const Contact = () => {
             <div className="space-y-6">
               <Card className="overflow-hidden h-[500px]">
                 <iframe
-                  src="https://maps.google.com/maps?q=Rua+Coronel+Quirino+Barbosa,+41,+Bonfim,+Campinas+-+SP,+13070-010&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  src="https://maps.google.com/maps?q=Rua+Coronel+Quirino+Barbosa,+41,+Bonfim,+Campinas+-+SP,+13070-010&t=&z=17&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
