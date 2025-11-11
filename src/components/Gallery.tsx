@@ -78,7 +78,7 @@ const Gallery = () => {
             </p>
           </div>
 
-          <div className="relative px-12">
+          <div className="relative px-2 sm:px-12">
             <Carousel
               opts={{
                 align: "start",

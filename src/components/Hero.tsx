@@ -15,9 +15,9 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto bg-background/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl">
           <div className="text-center space-y-8 animate-fade-in">
-          <div className="flex items-center justify-center gap-6 flex-col md:flex-row">
-            <img src={logo} alt="Centro de Imagens Crânio Faciais Logo" className="h-20 md:h-28 w-auto" />
-            <h1 className="text-4xl md:text-6xl font-bold font-tahoma text-foreground leading-tight">
+          <div className="flex items-center justify-center gap-4 md:gap-6 flex-col md:flex-row">
+            <img src={logo} alt="Centro de Imagens Crânio Faciais Logo" className="h-16 md:h-28 w-auto" />
+            <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold font-tahoma text-foreground leading-tight break-words">
               CENTRO DE IMAGENS CRÂNIO FACIAIS
             </h1>
           </div>
