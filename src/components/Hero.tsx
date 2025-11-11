@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import logo from "@/assets/logo.png";
 
 const Hero = () => {
   return (
@@ -14,9 +15,12 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto bg-background/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl">
           <div className="text-center space-y-8 animate-fade-in">
-          <h1 className="text-4xl md:text-6xl font-bold font-tahoma text-foreground leading-tight">
-            CENTRO DE IMAGENS CRÂNIO FACIAIS
-          </h1>
+          <div className="flex items-center justify-center gap-6 flex-col md:flex-row">
+            <img src={logo} alt="Centro de Imagens Crânio Faciais Logo" className="h-20 md:h-28 w-auto" />
+            <h1 className="text-4xl md:text-6xl font-bold font-tahoma text-foreground leading-tight">
+              CENTRO DE IMAGENS CRÂNIO FACIAIS
+            </h1>
+          </div>
           
           <h2 className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
             Imaginologia Odontológica desde 2002, oferecendo diagnósticos precisos e atendimento especializado
