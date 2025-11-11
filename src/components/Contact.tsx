@@ -165,31 +165,25 @@ const Contact = () => {
               {contactInfo.filter(info => info.title === "Endereço").map((info, index) => {
                 const Icon = info.icon;
                 return (
-                  <Card 
+                  <div 
                     key={index}
-                    className="hover:shadow-lg transition-all duration-300"
+                    className="text-center py-4 space-y-3"
                   >
-                    <CardContent className="pt-6">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Icon className="w-6 h-6 text-primary" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="font-semibold text-foreground mb-1">
-                            {info.title}
-                          </h3>
-                          <a
-                            href={info.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground hover:text-primary transition-colors"
-                          >
-                            {info.content}
-                          </a>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                    <div className="flex items-center justify-center gap-3">
+                      <Icon className="w-8 h-8 text-primary" />
+                      <h3 className="text-2xl font-bold text-foreground">
+                        {info.title}
+                      </h3>
+                    </div>
+                    <a
+                      href={info.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xl text-foreground hover:text-primary transition-colors font-medium inline-block"
+                    >
+                      {info.content}
+                    </a>
+                  </div>
                 );
               })}
             </div>
