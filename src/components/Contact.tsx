@@ -63,7 +63,7 @@ const Contact = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="space-y-6">
-              {contactInfo.map((info, index) => {
+              {contactInfo.filter(info => info.title !== "Endereço").map((info, index) => {
                 const Icon = info.icon;
                 return (
                   <Card 
@@ -148,18 +148,51 @@ const Contact = () => {
               </Card>
             </div>
 
-            <Card className="overflow-hidden h-[500px]">
-              <iframe
-                src="https://maps.google.com/maps?q=Rua+Coronel+Quirino+Barbosa,+41,+Bonfim,+Campinas+-+SP,+13070-010&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Localização Centro de Imagens Cranio Faciais"
-              ></iframe>
-            </Card>
+            <div className="space-y-6">
+              <Card className="overflow-hidden h-[500px]">
+                <iframe
+                  src="https://maps.google.com/maps?q=Rua+Coronel+Quirino+Barbosa,+41,+Bonfim,+Campinas+-+SP,+13070-010&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Localização Centro de Imagens Cranio Faciais"
+                ></iframe>
+              </Card>
+
+              {contactInfo.filter(info => info.title === "Endereço").map((info, index) => {
+                const Icon = info.icon;
+                return (
+                  <Card 
+                    key={index}
+                    className="hover:shadow-lg transition-all duration-300"
+                  >
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-6 h-6 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-foreground mb-1">
+                            {info.title}
+                          </h3>
+                          <a
+                            href={info.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            {info.content}
+                          </a>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
           </div>
 
           <div className="text-center">
