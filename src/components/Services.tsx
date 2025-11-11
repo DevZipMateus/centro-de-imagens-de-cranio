@@ -1,5 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Scan, Camera, X as XRay, FileText } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import mandibula3d from "@/assets/3d-mandibula.jpg";
+import tomografo from "@/assets/tomografo.jpg";
+import panoramico from "@/assets/panoramico.jpg";
+import cadeiraOdontologica from "@/assets/cadeira-odontologica.jpg";
+import oclusal1 from "@/assets/oclusal-1.jpg";
+import oclusal2 from "@/assets/oclusal-2.jpg";
+import panoramica1 from "@/assets/panoramica-1.jpg";
+import panoramica2 from "@/assets/panoramica-2.jpg";
+import panoramicaPeriapicais from "@/assets/panoramica-periapicais.jpg";
+import panoramicaDenticaoMista from "@/assets/panoramica-denticao-mista.jpg";
 
 const Services = () => {
   const services = [
@@ -77,6 +88,65 @@ const Services = () => {
                 </Card>
               );
             })}
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <Carousel className="w-full">
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={mandibula3d} alt="Imagem 3D de mandíbula" className="w-full h-full object-cover" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={tomografo} alt="Equipamento de tomografia computadorizada" className="w-full h-full object-cover" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={panoramico} alt="Equipamento de raio-x panorâmico" className="w-full h-full object-cover" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={cadeiraOdontologica} alt="Cadeira odontológica e equipamentos" className="w-full h-full object-cover" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={oclusal1} alt="Radiografia oclusal" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={oclusal2} alt="Radiografia oclusal" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={panoramica1} alt="Radiografia panorâmica" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={panoramica2} alt="Radiografia panorâmica" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={panoramicaPeriapicais} alt="Radiografia panorâmica com periapicais" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={panoramicaDenticaoMista} alt="Radiografia panorâmica de dentição mista" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </div>
