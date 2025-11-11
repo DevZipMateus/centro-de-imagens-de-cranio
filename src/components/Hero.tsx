@@ -22,7 +22,7 @@ const Hero = () => {
             Imaginologia Odontológica desde 2002, oferecendo diagnósticos precisos e atendimento especializado
           </h2>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
+          <div className="flex justify-center pt-6">
             <Button
               asChild
               size="lg"
@@ -33,38 +33,6 @@ const Hero = () => {
                 Entre em contato
               </a>
             </Button>
-            
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => {
-                const element = document.getElementById("servicos");
-                if (element) {
-                  const offset = 80;
-                  const elementPosition = element.getBoundingClientRect().top;
-                  const offsetPosition = elementPosition + window.pageYOffset - offset;
-                  window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-                }
-              }}
-              className="border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-            >
-              Nossos serviços
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 max-w-3xl mx-auto">
-            <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-primary">22+</div>
-              <div className="text-muted-foreground">Anos de experiência</div>
-            </div>
-            <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-primary">100%</div>
-              <div className="text-muted-foreground">Equipamentos modernos</div>
-            </div>
-            <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-primary">6+</div>
-              <div className="text-muted-foreground">Planos aceitos</div>
-            </div>
           </div>
         </div>
         </div>
