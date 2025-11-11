@@ -5,22 +5,23 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 
 const DentistLogin = () => {
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+  const [email, setEmail] = useState("E-mail");
+  const [senha, setSenha] = useState("Senha");
   const [emailError, setEmailError] = useState(false);
   const [senhaError, setSenhaError] = useState(false);
+  const [senhaType, setSenhaType] = useState<"text" | "password">("text");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     let hasError = false;
 
-    if (!email.trim()) {
+    if (!email.trim() || email === "E-mail") {
       setEmailError(true);
       hasError = true;
     } else {
       setEmailError(false);
     }
 
-    if (!senha.trim()) {
+    if (!senha.trim() || senha === "Senha") {
       setSenhaError(true);
       hasError = true;
     } else {
@@ -42,7 +43,7 @@ const DentistLogin = () => {
       <CardContent>
               <form
                 method="POST"
-                action="https://idoc.radiomemory.com.br/login.php?go=clinica&retorno=https://centrodeimagens.radiomemory.com.br"
+                action="https://idoc.radiomemory.com.br/login.php?go=clinica&retorno=centrodeimagens.radiomemory.com.br"
                 target="_top"
                 onSubmit={handleSubmit}
                 className="space-y-6"
@@ -54,14 +55,19 @@ const DentistLogin = () => {
                   <Input
                     id="email"
                     name="email"
-                    type="email"
+                    type="text"
                     value={email}
+                    onFocus={() => {
+                      if (email === "E-mail") setEmail("");
+                    }}
+                    onBlur={() => {
+                      if (email === "") setEmail("E-mail");
+                    }}
                     onChange={(e) => {
                       setEmail(e.target.value);
                       setEmailError(false);
                     }}
-                    className={emailError ? "border-red-500" : ""}
-                    placeholder="seu@email.com"
+                    className={`${emailError ? "border-red-500" : ""} ${email === "E-mail" ? "text-muted-foreground" : ""}`}
                   />
                   {emailError && (
                     <p className="text-sm text-red-500">
@@ -77,14 +83,25 @@ const DentistLogin = () => {
                   <Input
                     id="senha"
                     name="senha"
-                    type="password"
+                    type={senhaType}
                     value={senha}
+                    onFocus={() => {
+                      if (senha === "Senha") {
+                        setSenha("");
+                        setSenhaType("password");
+                      }
+                    }}
+                    onBlur={() => {
+                      if (senha === "") {
+                        setSenha("Senha");
+                        setSenhaType("text");
+                      }
+                    }}
                     onChange={(e) => {
                       setSenha(e.target.value);
                       setSenhaError(false);
                     }}
-                    className={senhaError ? "border-red-500" : ""}
-                    placeholder="••••••••"
+                    className={`${senhaError ? "border-red-500" : ""} ${senha === "Senha" ? "text-muted-foreground" : ""}`}
                   />
                   {senhaError && (
                     <p className="text-sm text-red-500">
@@ -103,7 +120,7 @@ const DentistLogin = () => {
 
                   <div className="text-right">
                     <a
-                      href="https://idoc.radiomemory.com.br/login.php?go=clinica&retorno=https://centrodeimagens.radiomemory.com.br"
+                      href="https://idoc.radiomemory.com.br/login/#esqueci-minha-senha"
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       Esqueci minha senha

@@ -5,22 +5,23 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 
 const PatientLogin = () => {
-  const [docUser, setDocUser] = useState("");
-  const [senhaUser, setSenhaUser] = useState("");
+  const [docUser, setDocUser] = useState("Número");
+  const [senhaUser, setSenhaUser] = useState("Senha");
   const [docUserError, setDocUserError] = useState(false);
   const [senhaUserError, setSenhaUserError] = useState(false);
+  const [senhaType, setSenhaType] = useState<"text" | "password">("text");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     let hasError = false;
 
-    if (!docUser.trim()) {
+    if (!docUser.trim() || docUser === "Número") {
       setDocUserError(true);
       hasError = true;
     } else {
       setDocUserError(false);
     }
 
-    if (!senhaUser.trim()) {
+    if (!senhaUser.trim() || senhaUser === "Senha") {
       setSenhaUserError(true);
       hasError = true;
     } else {
@@ -56,12 +57,17 @@ const PatientLogin = () => {
               name="doc_user"
               type="text"
               value={docUser}
+              onFocus={() => {
+                if (docUser === "Número") setDocUser("");
+              }}
+              onBlur={() => {
+                if (docUser === "") setDocUser("Número");
+              }}
               onChange={(e) => {
                 setDocUser(e.target.value);
                 setDocUserError(false);
               }}
-              className={docUserError ? "border-red-500" : ""}
-              placeholder="Digite o número do exame"
+              className={`${docUserError ? "border-red-500" : ""} ${docUser === "Número" ? "text-muted-foreground" : ""}`}
             />
             {docUserError && (
               <p className="text-sm text-red-500">
@@ -77,14 +83,25 @@ const PatientLogin = () => {
             <Input
               id="senha_user"
               name="senha_user"
-              type="password"
+              type={senhaType}
               value={senhaUser}
+              onFocus={() => {
+                if (senhaUser === "Senha") {
+                  setSenhaUser("");
+                  setSenhaType("password");
+                }
+              }}
+              onBlur={() => {
+                if (senhaUser === "") {
+                  setSenhaUser("Senha");
+                  setSenhaType("text");
+                }
+              }}
               onChange={(e) => {
                 setSenhaUser(e.target.value);
                 setSenhaUserError(false);
               }}
-              className={senhaUserError ? "border-red-500" : ""}
-              placeholder="••••••••"
+              className={`${senhaUserError ? "border-red-500" : ""} ${senhaUser === "Senha" ? "text-muted-foreground" : ""}`}
             />
             {senhaUserError && (
               <p className="text-sm text-red-500">
