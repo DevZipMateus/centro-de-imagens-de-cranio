@@ -33,16 +33,13 @@ const DentistLogin = () => {
   };
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-md mx-auto">
-          <Card className="border-2">
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl md:text-3xl">
-                Área do Dentista
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+    <Card className="border-2 h-full">
+      <CardHeader className="text-center">
+        <CardTitle className="text-2xl md:text-3xl">
+          Área do Dentista
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
               <form
                 method="POST"
                 action="https://idoc.radiomemory.com.br/login.php?go=clinica&retorno=https://centrodeimagens.radiomemory.com.br"
@@ -116,9 +113,6 @@ const DentistLogin = () => {
               </form>
             </CardContent>
           </Card>
-        </div>
-      </div>
-    </section>
   );
 };
 
