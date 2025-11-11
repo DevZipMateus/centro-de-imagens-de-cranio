@@ -11,6 +11,16 @@ import panoramica1 from "@/assets/panoramica-1.jpg";
 import panoramica2 from "@/assets/panoramica-2.jpg";
 import panoramicaPeriapicais from "@/assets/panoramica-periapicais.jpg";
 import panoramicaDenticaoMista from "@/assets/panoramica-denticao-mista.jpg";
+import periapicaisBocaToda from "@/assets/periapicais-boca-toda-interproximais.jpg";
+import radiografiaInterproximal from "@/assets/radiografia-interproximal-premolares.jpg";
+import radiografiaPeriapical from "@/assets/radiografia-periapical-premolares-inferiores.jpg";
+import radiografiasPeriapicaisBocaToda from "@/assets/radiografias-periapicais-boca-toda-interproximais.jpg";
+import telerradiografiaFrontal from "@/assets/telerradiografia-frontal.jpg";
+import tomoCanalEntreRaizes from "@/assets/tomo-canal-entre-raizes.jpg";
+import tomoFratura21 from "@/assets/tomo-fratura-21.jpg";
+import tomoFratura21Coronal from "@/assets/tomo-fratura-21-coronal.jpg";
+import tomoFratura26Axial from "@/assets/tomo-fratura-26-axial.jpg";
+import tomoLesao from "@/assets/tomo-lesao.jpg";
 
 const Services = () => {
   const services = [
@@ -141,6 +151,56 @@ const Services = () => {
                 <CarouselItem>
                   <div className="relative aspect-video overflow-hidden rounded-lg">
                     <img src={mandibula3d} alt="Imagem 3D de mandíbula" className="w-full h-full object-cover" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={periapicaisBocaToda} alt="Radiografias periapicais de boca toda com interproximais" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={radiografiaInterproximal} alt="Radiografia interproximal de pré-molares" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={radiografiaPeriapical} alt="Radiografia periapical de pré-molares inferiores" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={radiografiasPeriapicaisBocaToda} alt="Radiografias periapicais de boca toda com interproximais" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={telerradiografiaFrontal} alt="Telerradiografia frontal" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={tomoCanalEntreRaizes} alt="Tomografia de canal entre raízes" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={tomoFratura21} alt="Tomografia de fratura no dente 21" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={tomoFratura21Coronal} alt="Tomografia coronal de fratura no dente 21" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={tomoFratura26Axial} alt="Tomografia axial de fratura no dente 26" className="w-full h-full object-contain bg-muted" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img src={tomoLesao} alt="Tomografia de lesão" className="w-full h-full object-contain bg-muted" />
                   </div>
                 </CarouselItem>
               </CarouselContent>
