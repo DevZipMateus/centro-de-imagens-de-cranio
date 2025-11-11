@@ -31,29 +31,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {values.map((value, index) => {
-            const Icon = value.icon;
-            return <Card key={index} className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg animate-fade-in" style={{
-              animationDelay: `${index * 100}ms`
-            }}>
-                  <CardContent className="pt-6 space-y-4 text-center">
-                    <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
-                      <Icon className="w-8 h-8 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-foreground">
-                      {value.title}
-                    </h3>
-                    <p className="text-muted-foreground">
-                      {value.description}
-                    </p>
-                  </CardContent>
-                </Card>;
-          })}
-          </div>
-
-          <div className="mt-16 max-w-5xl mx-auto">
-            <h3 className="text-2xl font-bold text-center text-foreground mb-8">Nossa Equipe</h3>
+          <div className="max-w-5xl mx-auto">
             <Carousel className="w-full">
               <CarouselContent>
                 <CarouselItem>
@@ -80,6 +58,27 @@ const About = () => {
               <CarouselPrevious />
               <CarouselNext />
             </Carousel>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {values.map((value, index) => {
+            const Icon = value.icon;
+            return <Card key={index} className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg animate-fade-in" style={{
+              animationDelay: `${index * 100}ms`
+            }}>
+                  <CardContent className="pt-6 space-y-4 text-center">
+                    <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
+                      <Icon className="w-8 h-8 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground">
+                      {value.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {value.description}
+                    </p>
+                  </CardContent>
+                </Card>;
+          })}
           </div>
         </div>
       </div>
