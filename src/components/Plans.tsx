@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 const Plans = () => {
   const plans = [
     "Uniodonto",
-    "Aberta",
+    "Abertta Saúde",
     "Rede Unna",
     "Hapvida",
     "Brazil Dental",

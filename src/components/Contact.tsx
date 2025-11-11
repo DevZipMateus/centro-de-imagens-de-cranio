@@ -6,15 +6,21 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Phone,
-      title: "Telefone",
+      title: "Telefones",
+      content: "(19) 3432 7752 / (19) 3422 5248",
+      link: "tel:+551934327752",
+    },
+    {
+      icon: Phone,
+      title: "WhatsApp",
       content: "(19) 98187-3397",
       link: "https://wa.me/5519981873397",
     },
     {
       icon: Mail,
       title: "E-mail",
-      content: "cristina.sewell@terra.com.br",
-      link: "mailto:cristina.sewell@terra.com.br",
+      content: "cicfpiracicaba@gmail.com",
+      link: "mailto:cicfpiracicaba@gmail.com",
     },
     {
       icon: MapPin,
@@ -49,7 +55,7 @@ const Contact = () => {
                   Como agendar?
                 </h3>
                 <p className="text-muted-foreground">
-                  Todos os nossos agendamentos são via telefone fixo <strong className="text-foreground">(19) 3432-7752</strong>. Não agendamos por WhatsApp. Nosso WhatsApp <strong className="text-foreground">(19) 98177-3397</strong> é disponível para contato e envio de pedidos e carteirinhas de convênios.
+                  Todos os nossos agendamentos são via telefone fixo <strong className="text-foreground">(19) 3432 7752 / (19) 3422 5248</strong>. Não agendamos por WhatsApp. Nosso WhatsApp <strong className="text-foreground">(19) 98187-3397</strong> é disponível para contato e envio de pedidos e carteirinhas de convênios.
                 </p>
               </div>
             </CardContent>
@@ -110,6 +116,31 @@ const Contact = () => {
                             <span className="font-medium text-foreground">{item.hours}</span>
                           </div>
                         ))}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-primary/20 bg-background">
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-foreground mb-3">
+                        Responsável Técnico
+                      </h3>
+                      <div className="space-y-1">
+                        <p className="text-foreground font-medium">Dra. Cristina Maria Dumit Sewell</p>
+                        <p className="text-muted-foreground text-sm">CRO-SP: 28.403</p>
+                        <a 
+                          href="mailto:cristina.sewell@terra.com.br"
+                          className="text-primary hover:text-primary/80 transition-colors text-sm"
+                        >
+                          cristina.sewell@terra.com.br
+                        </a>
                       </div>
                     </div>
                   </div>
