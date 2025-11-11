@@ -19,8 +19,8 @@ const Footer = () => {
               <h3 className="font-semibold mb-4">Contato</h3>
               <ul className="space-y-2 text-sm text-background/80">
                 <li>Rua Coronel Barbosa, 41</li>
-                <li>(19) 98187-3397</li>
-                <li>cristina.sewell@terra.com.br</li>
+                <li>(19) 3432 7752 / (19) 3422 5248</li>
+                <li>cicfpiracicaba@gmail.com</li>
               </ul>
             </div>
 
