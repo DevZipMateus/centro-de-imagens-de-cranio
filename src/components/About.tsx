@@ -1,5 +1,16 @@
 import { Award, Target, Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import equipamento1 from "@/assets/equipamento-1.jpg";
+import equipe1 from "@/assets/equipe-1.jpg";
+import recepcao2 from "@/assets/recepcao-2.jpg";
+import equipe2 from "@/assets/equipe-2.jpg";
 
 const About = () => {
   const values = [
@@ -56,6 +67,54 @@ const About = () => {
                 </Card>
               );
             })}
+          </div>
+
+          <div className="mt-16 max-w-5xl mx-auto">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+              Nossa Equipe e Instalações
+            </h3>
+            <Carousel className="w-full">
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img
+                      src={equipamento1}
+                      alt="Equipamento de tomografia computadorizada"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img
+                      src={equipe1}
+                      alt="Nossa equipe de profissionais"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img
+                      src={recepcao2}
+                      alt="Recepção e atendimento"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img
+                      src={equipe2}
+                      alt="Equipe de atendimento"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </div>
