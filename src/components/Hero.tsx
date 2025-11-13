@@ -8,26 +8,24 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center space-y-8 animate-fade-in">
-            {/* Metallic Ellipse with Logo */}
+            {/* Metallic Ellipse with Logo and Title */}
             <div className="flex justify-center items-center mb-8">
-              <div className="metallic-ellipse flex items-center justify-center">
+              <div className="metallic-ellipse flex flex-col items-center justify-center gap-2 md:gap-4 p-6 md:p-8">
                 <img 
                   src={logo} 
-                  alt="Centro de Imagens Crânio Faciais Logo" 
-                  className="h-20 md:h-32 w-auto relative z-10" 
+                  alt="Centro de Imagens Cranio Faciais Logo" 
+                  className="h-16 md:h-24 w-auto relative z-10" 
                 />
+                <h1 
+                  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-tahoma leading-tight text-center"
+                  style={{ color: '#004A99' }}
+                >
+                  Centro de Imagens
+                  <br />
+                  Cranio Faciais
+                </h1>
               </div>
             </div>
-
-            {/* Main Title */}
-            <h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-tahoma leading-tight"
-              style={{ color: '#004A99' }}
-            >
-              Centro de Imagens
-              <br />
-              Crânio Faciais
-            </h1>
 
             {/* Primary Description */}
             <h2 className="text-base md:text-lg font-tahoma max-w-3xl mx-auto" style={{ color: '#555' }}>

@@ -50,9 +50,9 @@ const Header = () => {
             onClick={() => scrollToSection("hero")}
             className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
-            <img src={logo} alt="Centro de Imagens Crânio Faciais" className="h-12 w-auto" />
+            <img src={logo} alt="Centro de Imagens Cranio Faciais" className="h-12 w-auto" />
             <span className="font-tahoma font-semibold text-lg text-foreground hidden sm:block">
-              CENTRO DE IMAGENS CRÂNIO FACIAIS
+              CENTRO DE IMAGENS CRANIO FACIAIS
             </span>
           </button>
 
