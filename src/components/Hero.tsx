@@ -10,14 +10,14 @@ const Hero = () => {
           <div className="text-center space-y-8 animate-fade-in">
             {/* Metallic Ellipse with Logo and Title */}
             <div className="flex justify-center items-center mb-8">
-              <div className="metallic-ellipse flex flex-col items-center justify-center gap-2 md:gap-4 p-6 md:p-8">
+              <div className="metallic-ellipse flex flex-col items-center justify-center gap-4 md:gap-6 p-8 md:p-10">
                 <img 
                   src={logo} 
                   alt="Centro de Imagens Cranio Faciais Logo" 
-                  className="h-16 md:h-24 w-auto relative z-10" 
+                  className="h-24 md:h-36 w-auto relative z-10" 
                 />
                 <h1 
-                  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-tahoma leading-tight text-center"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-tahoma leading-tight text-center"
                   style={{ color: '#004A99' }}
                 >
                   Centro de Imagens

@@ -132,8 +132,8 @@ All colors MUST be HSL.
   }
 
   .metallic-ellipse {
-    width: clamp(320px, 85vw, 500px);
-    height: clamp(240px, 60vw, 380px);
+    width: clamp(400px, 90vw, 650px);
+    height: clamp(300px, 68vw, 500px);
     border-radius: 50%;
     background: linear-gradient(135deg, 
       #e5e5e5 0%, 
