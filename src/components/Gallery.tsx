@@ -8,6 +8,8 @@ import {
 } from "@/components/ui/carousel";
 import fachada1 from "@/assets/hero-bg.jpg";
 import sala2 from "@/assets/sala-2.jpg";
+import recepcao3 from "@/assets/recepcao-3.jpg";
+import recepcao4 from "@/assets/recepcao-4.jpg";
 import equipamentoPanoramico1 from "@/assets/equipamento-panoramico-1.jpg";
 import equipamentoPanoramico2 from "@/assets/equipamento-panoramico-2.jpg";
 import cadeiraSalaRaioX from "@/assets/cadeira-sala-raio-x.jpg";
@@ -25,9 +27,19 @@ const Gallery = () => {
       title: "Ambiente de atendimento",
     },
     {
+      src: recepcao3,
+      alt: "Recepção do Centro de Imagens",
+      title: "Recepção",
+    },
+    {
+      src: recepcao4,
+      alt: "Recepção e área de espera",
+      title: "Área de espera",
+    },
+    {
       src: equipamentoPanoramico1,
       alt: "Equipamento de raio-x panorâmico digital",
-      title: "Equipamento panorâmico",
+      title: "Equipamento Tomógrafo Odontológico",
     },
     {
       src: equipamentoPanoramico2,
