@@ -1,6 +1,8 @@
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import { Scan, Camera, X as XRay } from "lucide-react";
+import { Scan, Camera, X as XRay, ZoomIn } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { useState } from "react";
 import mandibula3d from "@/assets/3d-mandibula.jpg";
 import oclusal1 from "@/assets/oclusal-1.jpg";
 import oclusal2 from "@/assets/oclusal-2.jpg";
@@ -32,6 +34,8 @@ interface Service {
 }
 
 const Services = () => {
+  const [selectedImage, setSelectedImage] = useState<ServiceImage | null>(null);
+
   const services: Service[] = [
     {
       icon: Camera,
@@ -178,12 +182,20 @@ const Services = () => {
                   <CarouselContent>
                     {service.images.map((image, imageIndex) => (
                       <CarouselItem key={imageIndex}>
-                        <div className="relative aspect-video overflow-hidden rounded-lg group">
+                        <div 
+                          className="relative aspect-video overflow-hidden rounded-lg group cursor-pointer"
+                          onClick={() => setSelectedImage(image)}
+                        >
                           <img 
                             src={image.src} 
                             alt={image.title} 
-                            className="w-full h-full object-contain bg-muted" 
+                            className="w-full h-full object-contain bg-muted transition-transform duration-300 group-hover:scale-105" 
                           />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-primary/90 rounded-full p-3">
+                              <ZoomIn className="w-6 h-6 text-primary-foreground" />
+                            </div>
+                          </div>
                           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
                             <p className="text-white font-medium text-sm md:text-base">
                               {image.title}
@@ -199,6 +211,30 @@ const Services = () => {
               </div>
             </div>
           ))}
+
+          <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+            <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 overflow-hidden">
+              <DialogTitle className="sr-only">
+                {selectedImage?.title}
+              </DialogTitle>
+              {selectedImage && (
+                <div className="relative w-full h-full flex flex-col">
+                  <div className="flex-1 flex items-center justify-center bg-black/90 p-4">
+                    <img 
+                      src={selectedImage.src} 
+                      alt={selectedImage.title}
+                      className="max-w-full max-h-[85vh] object-contain"
+                    />
+                  </div>
+                  <div className="bg-background/95 p-4 border-t">
+                    <p className="text-foreground font-medium text-center">
+                      {selectedImage.title}
+                    </p>
+                  </div>
+                </div>
+              )}
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>
