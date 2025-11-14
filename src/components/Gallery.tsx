@@ -7,12 +7,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import fachada1 from "@/assets/hero-bg.jpg";
-import fachada2 from "@/assets/fachada-2.jpg";
-import recepcao from "@/assets/recepcao.jpg";
-import sala1 from "@/assets/sala-1.jpg";
 import sala2 from "@/assets/sala-2.jpg";
 import equipamentoPanoramico1 from "@/assets/equipamento-panoramico-1.jpg";
-import corredorSala from "@/assets/corredor-sala.jpg";
 import equipamentoPanoramico2 from "@/assets/equipamento-panoramico-2.jpg";
 import cadeiraSalaRaioX from "@/assets/cadeira-sala-raio-x.jpg";
 
@@ -24,21 +20,6 @@ const Gallery = () => {
       title: "Nossa fachada",
     },
     {
-      src: fachada2,
-      alt: "Vista externa da clínica",
-      title: "Entrada da clínica",
-    },
-    {
-      src: recepcao,
-      alt: "Recepção do Centro de Imagens",
-      title: "Recepção acolhedora",
-    },
-    {
-      src: sala1,
-      alt: "Sala de exames do Centro de Imagens",
-      title: "Sala de exames",
-    },
-    {
       src: sala2,
       alt: "Ambiente de atendimento da clínica",
       title: "Ambiente de atendimento",
@@ -47,11 +28,6 @@ const Gallery = () => {
       src: equipamentoPanoramico1,
       alt: "Equipamento de raio-x panorâmico digital",
       title: "Equipamento panorâmico",
-    },
-    {
-      src: corredorSala,
-      alt: "Corredor com acesso às salas de exame",
-      title: "Área de circulação",
     },
     {
       src: equipamentoPanoramico2,
