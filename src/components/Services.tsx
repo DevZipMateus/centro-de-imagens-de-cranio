@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Scan, Camera, X as XRay } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import mandibula3d from "@/assets/3d-mandibula.jpg";
@@ -19,26 +19,113 @@ import tomoFratura21Coronal from "@/assets/tomo-fratura-21-coronal.jpg";
 import tomoFratura26Axial from "@/assets/tomo-fratura-26-axial.jpg";
 import tomoLesao from "@/assets/tomo-lesao.jpg";
 
+interface ServiceImage {
+  src: string;
+  title: string;
+}
+
+interface Service {
+  icon: typeof Camera;
+  title: string;
+  description: string;
+  images: ServiceImage[];
+}
+
 const Services = () => {
-  const services = [
+  const services: Service[] = [
     {
       icon: Camera,
       title: "Radiografias intra bucais",
       description: "Periapicais, interproximais e de oclusão",
-      features: ["Alta resolução", "Baixa radiação", "Resultado rápido"],
+      images: [
+        {
+          src: periapicaisBocaToda,
+          title: "Periapicais de boca toda com interproximais"
+        },
+        {
+          src: radiografiaPeriapical,
+          title: "Radiografia periapical de pré-molares inferiores"
+        },
+        {
+          src: radiografiasPeriapicaisBocaToda,
+          title: "Radiografias periapicais completas"
+        },
+        {
+          src: panoramicaPeriapicais,
+          title: "Panorâmica com periapicais dos incisivos"
+        },
+        {
+          src: radiografiaInterproximal,
+          title: "Radiografia interproximal de pré-molares"
+        },
+        {
+          src: oclusal1,
+          title: "Radiografia oclusal"
+        },
+        {
+          src: oclusal2,
+          title: "Radiografia oclusal"
+        }
+      ]
     },
     {
       icon: XRay,
       title: "Radiografias extra bucais",
       description: "Panorâmica, telerradiografias laterais e frontais, ATM",
-      features: ["Visão completa", "Precisão diagnóstica", "Tecnologia digital"],
+      images: [
+        {
+          src: panoramica1,
+          title: "Radiografia panorâmica"
+        },
+        {
+          src: panoramica2,
+          title: "Radiografia panorâmica"
+        },
+        {
+          src: panoramicaPeriapicais,
+          title: "Panorâmica com periapicais"
+        },
+        {
+          src: panoramicaDenticaoMista,
+          title: "Panorâmica de dentição mista"
+        },
+        {
+          src: telerradiografiaFrontal,
+          title: "Telerradiografia frontal"
+        }
+      ]
     },
     {
       icon: Scan,
       title: "Tomografias volumétricas",
       description: "Exames 3D de alta precisão",
-      features: ["Imagem tridimensional", "Planejamento cirúrgico", "Maior precisão"],
-    },
+      images: [
+        {
+          src: mandibula3d,
+          title: "Imagem 3D de mandíbula"
+        },
+        {
+          src: tomoCanalEntreRaizes,
+          title: "Tomografia de canal entre raízes"
+        },
+        {
+          src: tomoFratura21,
+          title: "Tomografia de fratura no dente 21"
+        },
+        {
+          src: tomoFratura21Coronal,
+          title: "Tomografia coronal - fratura no dente 21"
+        },
+        {
+          src: tomoFratura26Axial,
+          title: "Tomografia axial - fratura no dente 26"
+        },
+        {
+          src: tomoLesao,
+          title: "Tomografia de lesão"
+        }
+      ]
+    }
   ];
 
   return (
@@ -73,107 +160,45 @@ const Services = () => {
                         <p className="text-muted-foreground text-sm">
                           {service.description}
                         </p>
-                  </div>
-                </div>
-              </CardHeader>
-            </Card>
+                      </div>
+                    </div>
+                  </CardHeader>
+                </Card>
               );
             })}
           </div>
 
-          <div className="max-w-5xl mx-auto">
-            <Carousel className="w-full">
-              <CarouselContent>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={oclusal1} alt="Radiografia oclusal" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={oclusal2} alt="Radiografia oclusal" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={panoramica1} alt="Radiografia panorâmica" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={panoramica2} alt="Radiografia panorâmica" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={panoramicaPeriapicais} alt="Radiografia panorâmica com periapicais" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={panoramicaDenticaoMista} alt="Radiografia panorâmica de dentição mista" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={mandibula3d} alt="Imagem 3D de mandíbula" className="w-full h-full object-cover" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={periapicaisBocaToda} alt="Radiografias periapicais de boca toda com interproximais" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={radiografiaInterproximal} alt="Radiografia interproximal de pré-molares" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={radiografiaPeriapical} alt="Radiografia periapical de pré-molares inferiores" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={radiografiasPeriapicaisBocaToda} alt="Radiografias periapicais de boca toda com interproximais" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={telerradiografiaFrontal} alt="Telerradiografia frontal" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={tomoCanalEntreRaizes} alt="Tomografia de canal entre raízes" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={tomoFratura21} alt="Tomografia de fratura no dente 21" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={tomoFratura21Coronal} alt="Tomografia coronal de fratura no dente 21" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={tomoFratura26Axial} alt="Tomografia axial de fratura no dente 26" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-                <CarouselItem>
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <img src={tomoLesao} alt="Tomografia de lesão" className="w-full h-full object-contain bg-muted" />
-                  </div>
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-          </div>
+          {services.map((service, serviceIndex) => (
+            <div key={serviceIndex} className="space-y-4 animate-fade-in" style={{ animationDelay: `${serviceIndex * 150}ms` }}>
+              <h3 className="text-2xl font-semibold text-foreground text-center">
+                {service.title}
+              </h3>
+              <div className="max-w-5xl mx-auto">
+                <Carousel className="w-full">
+                  <CarouselContent>
+                    {service.images.map((image, imageIndex) => (
+                      <CarouselItem key={imageIndex}>
+                        <div className="relative aspect-video overflow-hidden rounded-lg group">
+                          <img 
+                            src={image.src} 
+                            alt={image.title} 
+                            className="w-full h-full object-contain bg-muted" 
+                          />
+                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                            <p className="text-white font-medium text-sm md:text-base">
+                              {image.title}
+                            </p>
+                          </div>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-2" />
+                  <CarouselNext className="right-2" />
+                </Carousel>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
