@@ -52,7 +52,7 @@ const Header = () => {
           >
             <img src={logo} alt="Centro de Imagens Cranio Faciais" className="h-12 w-auto" />
             <span className="font-tahoma font-semibold text-lg text-foreground hidden sm:block">
-              CENTRO DE IMAGENS CRANIO FACIAIS
+              Centro de Imagens Cranio Faciais
             </span>
           </button>
 
