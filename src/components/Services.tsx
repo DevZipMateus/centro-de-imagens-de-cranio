@@ -73,20 +73,10 @@ const Services = () => {
                         <p className="text-muted-foreground text-sm">
                           {service.description}
                         </p>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
               );
             })}
           </div>
