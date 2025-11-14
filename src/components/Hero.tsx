@@ -24,18 +24,18 @@ const Hero = () => {
                   <br />
                   Cranio Faciais
                 </h1>
+                
+                {/* Primary Description */}
+                <h2 className="text-base md:text-lg font-tahoma max-w-3xl text-center" style={{ color: '#555' }}>
+                  Imaginologia Odontológica desde 2002, oferecendo diagnósticos precisos e atendimento especializado
+                </h2>
+
+                {/* Secondary Description */}
+                <p className="text-base md:text-lg font-tahoma max-w-3xl text-center" style={{ color: '#555' }}>
+                  Atendimentos particulares e planos odontológicos
+                </p>
               </div>
             </div>
-
-            {/* Primary Description */}
-            <h2 className="text-base md:text-lg font-tahoma max-w-3xl mx-auto" style={{ color: '#555' }}>
-              Imaginologia Odontológica desde 2002, oferecendo diagnósticos precisos e atendimento especializado
-            </h2>
-
-            {/* Secondary Description */}
-            <p className="text-base md:text-lg font-tahoma max-w-3xl mx-auto" style={{ color: '#555' }}>
-              Atendimentos particulares e planos odontológicos
-            </p>
 
             {/* CTA Button */}
             <div className="flex justify-center pt-6">
