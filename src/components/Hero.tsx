@@ -1,10 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
+import fachada from "@/assets/fachada-2.jpg";
 
 const Hero = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 bg-white">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={{ backgroundImage: `url(${fachada})` }}
+      />
       <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center space-y-8 animate-fade-in">
