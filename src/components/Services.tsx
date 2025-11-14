@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Scan, Camera, X as XRay, FileText, User } from "lucide-react";
+import { Scan, Camera, X as XRay } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import mandibula3d from "@/assets/3d-mandibula.jpg";
 import oclusal1 from "@/assets/oclusal-1.jpg";
@@ -34,22 +34,10 @@ const Services = () => {
       features: ["Visão completa", "Precisão diagnóstica", "Tecnologia digital"],
     },
     {
-      icon: FileText,
-      title: "Documentações ortodônticas",
-      description: "Documentação completa para planejamento ortodôntico",
-      features: ["Análise detalhada", "Relatórios completos", "Imagens digitais"],
-    },
-    {
       icon: Scan,
       title: "Tomografias volumétricas",
       description: "Exames 3D de alta precisão",
       features: ["Imagem tridimensional", "Planejamento cirúrgico", "Maior precisão"],
-    },
-    {
-      icon: User,
-      title: "Atendimento particular",
-      description: "Atendemos pacientes particulares",
-      features: ["Sem necessidade de plano", "Agendamento facilitado", "Qualidade garantida"],
     },
   ];
 
