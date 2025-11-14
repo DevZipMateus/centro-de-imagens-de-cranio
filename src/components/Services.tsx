@@ -40,7 +40,7 @@ const Services = () => {
     {
       icon: Camera,
       title: "Radiografias intra bucais",
-      description: "Periapicais, interproximais e de oclusão",
+      description: "Periapicais, interproximais e oclusais",
       images: [
         {
           src: periapicaisBocaToda,
