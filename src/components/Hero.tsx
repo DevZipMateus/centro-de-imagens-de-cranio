@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
-import fachada from "@/assets/fachada-2.jpg";
+import heroBackground from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
@@ -9,7 +9,7 @@ const Hero = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
-        style={{ backgroundImage: `url(${fachada})` }}
+        style={{ backgroundImage: `url(${heroBackground})` }}
       />
       <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
         <div className="max-w-5xl mx-auto">
