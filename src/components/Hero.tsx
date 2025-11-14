@@ -8,7 +8,7 @@ const Hero = () => {
     <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 bg-white">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15"
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
       <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
