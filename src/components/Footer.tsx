@@ -21,6 +21,7 @@ const Footer = () => {
                 <li>R. Cel. Barbosa, 41 - São Judas</li>
                 <li>Piracicaba - SP, CEP: 13416-381</li>
                 <li>(19) 3432 7752 / (19) 3422 5248</li>
+                <li>WhatsApp: (19) 98187-3397</li>
                 <li>cicfpiracicaba@gmail.com</li>
               </ul>
             </div>
