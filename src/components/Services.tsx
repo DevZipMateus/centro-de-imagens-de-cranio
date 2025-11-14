@@ -145,72 +145,69 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-12">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card 
-                  key={index}
-                  className="hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/50 animate-fade-in"
+                <div 
+                  key={index} 
+                  className="space-y-6 animate-fade-in"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <CardHeader>
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-6 h-6 text-primary" />
+                  <Card 
+                    className="hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/50"
+                  >
+                    <CardHeader>
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-6 h-6 text-primary" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
+                          <p className="text-muted-foreground text-sm">
+                            {service.description}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
-                        <p className="text-muted-foreground text-sm">
-                          {service.description}
-                        </p>
-                      </div>
-                    </div>
-                  </CardHeader>
-                </Card>
+                    </CardHeader>
+                  </Card>
+
+                  <div className="max-w-5xl mx-auto">
+                    <Carousel className="w-full">
+                      <CarouselContent>
+                        {service.images.map((image, imageIndex) => (
+                          <CarouselItem key={imageIndex}>
+                            <div 
+                              className="relative aspect-video overflow-hidden rounded-lg group cursor-pointer"
+                              onClick={() => setSelectedImage(image)}
+                            >
+                              <img 
+                                src={image.src} 
+                                alt={image.title} 
+                                className="w-full h-full object-contain bg-muted transition-transform duration-300 group-hover:scale-105" 
+                              />
+                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-primary/90 rounded-full p-3">
+                                  <ZoomIn className="w-6 h-6 text-primary-foreground" />
+                                </div>
+                              </div>
+                              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                                <p className="text-white font-medium text-sm md:text-base">
+                                  {image.title}
+                                </p>
+                              </div>
+                            </div>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      <CarouselPrevious className="left-2" />
+                      <CarouselNext className="right-2" />
+                    </Carousel>
+                  </div>
+                </div>
               );
             })}
           </div>
-
-          {services.map((service, serviceIndex) => (
-            <div key={serviceIndex} className="space-y-4 animate-fade-in" style={{ animationDelay: `${serviceIndex * 150}ms` }}>
-              <h3 className="text-2xl font-semibold text-foreground text-center">
-                {service.title}
-              </h3>
-              <div className="max-w-5xl mx-auto">
-                <Carousel className="w-full">
-                  <CarouselContent>
-                    {service.images.map((image, imageIndex) => (
-                      <CarouselItem key={imageIndex}>
-                        <div 
-                          className="relative aspect-video overflow-hidden rounded-lg group cursor-pointer"
-                          onClick={() => setSelectedImage(image)}
-                        >
-                          <img 
-                            src={image.src} 
-                            alt={image.title} 
-                            className="w-full h-full object-contain bg-muted transition-transform duration-300 group-hover:scale-105" 
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                            <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-primary/90 rounded-full p-3">
-                              <ZoomIn className="w-6 h-6 text-primary-foreground" />
-                            </div>
-                          </div>
-                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                            <p className="text-white font-medium text-sm md:text-base">
-                              {image.title}
-                            </p>
-                          </div>
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="left-2" />
-                  <CarouselNext className="right-2" />
-                </Carousel>
-              </div>
-            </div>
-          ))}
 
           <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
             <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 overflow-hidden">
