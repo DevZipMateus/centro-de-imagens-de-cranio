@@ -25,7 +25,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Endereço",
-      content: "R. Cel. Barbosa, 41 - São Judas, Piracicaba - SP, 13416-381",
+      content: "R. Cel. Barbosa, 41 - São Judas, Piracicaba - SP",
       link: "https://maps.app.goo.gl/gkzJQRGetHNtwkLC6",
     },
   ];
