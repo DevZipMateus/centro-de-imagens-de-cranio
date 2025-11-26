@@ -31,6 +31,7 @@ const Header = () => {
 
   const menuItems = [
     { label: "Início", id: "hero" },
+    { label: "Acessar Exames", id: "acessar-exames" },
     { label: "Sobre", id: "sobre" },
     { label: "Serviços", id: "servicos" },
     { label: "Requisições de Exames", id: "documentos" },
