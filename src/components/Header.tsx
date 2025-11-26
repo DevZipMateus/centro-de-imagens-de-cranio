@@ -62,7 +62,11 @@ const Header = () => {
               <li key={item.id}>
                 <button
                   onClick={() => scrollToSection(item.id)}
-                  className="text-foreground hover:text-primary transition-colors font-medium"
+                  className={
+                    item.id === "acessar-exames"
+                      ? "bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium px-4 py-2 rounded-md"
+                      : "text-foreground hover:text-primary transition-colors font-medium"
+                  }
                 >
                   {item.label}
                 </button>
@@ -87,7 +91,11 @@ const Header = () => {
               <li key={item.id}>
                 <button
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-foreground hover:text-primary transition-colors font-medium py-2"
+                  className={
+                    item.id === "acessar-exames"
+                      ? "block w-full text-center bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium py-2 rounded-md"
+                      : "block w-full text-left text-foreground hover:text-primary transition-colors font-medium py-2"
+                  }
                 >
                   {item.label}
                 </button>
