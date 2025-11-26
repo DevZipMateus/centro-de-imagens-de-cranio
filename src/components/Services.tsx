@@ -1,8 +1,9 @@
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import { Scan, Camera, X as XRay, ZoomIn } from "lucide-react";
+import { Scan, Camera, X as XRay, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 import mandibula3d from "@/assets/3d-mandibula.jpg";
 import oclusal1 from "@/assets/oclusal-1.jpg";
 import oclusal2 from "@/assets/oclusal-2.jpg";
@@ -34,7 +35,7 @@ interface Service {
 }
 
 const Services = () => {
-  const [selectedImage, setSelectedImage] = useState<ServiceImage | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ image: ServiceImage; serviceIndex: number; imageIndex: number } | null>(null);
 
   const services: Service[] = [
     {
@@ -132,6 +133,51 @@ const Services = () => {
     }
   ];
 
+  const handlePrevious = () => {
+    if (!selectedImage) return;
+    
+    const currentService = services[selectedImage.serviceIndex];
+    const newIndex = selectedImage.imageIndex === 0 
+      ? currentService.images.length - 1 
+      : selectedImage.imageIndex - 1;
+    
+    setSelectedImage({
+      image: currentService.images[newIndex],
+      serviceIndex: selectedImage.serviceIndex,
+      imageIndex: newIndex
+    });
+  };
+
+  const handleNext = () => {
+    if (!selectedImage) return;
+    
+    const currentService = services[selectedImage.serviceIndex];
+    const newIndex = selectedImage.imageIndex === currentService.images.length - 1 
+      ? 0 
+      : selectedImage.imageIndex + 1;
+    
+    setSelectedImage({
+      image: currentService.images[newIndex],
+      serviceIndex: selectedImage.serviceIndex,
+      imageIndex: newIndex
+    });
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!selectedImage) return;
+      
+      if (e.key === 'ArrowLeft') {
+        handlePrevious();
+      } else if (e.key === 'ArrowRight') {
+        handleNext();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImage]);
+
   return (
     <section id="servicos" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
@@ -173,7 +219,7 @@ const Services = () => {
                           <CarouselItem key={imageIndex}>
                             <div 
                               className="relative aspect-video overflow-hidden rounded-lg group cursor-pointer"
-                              onClick={() => setSelectedImage(image)}
+                              onClick={() => setSelectedImage({ image, serviceIndex: index, imageIndex })}
                             >
                               <img 
                                 src={image.src} 
@@ -206,20 +252,38 @@ const Services = () => {
           <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
             <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 overflow-hidden">
               <DialogTitle className="sr-only">
-                {selectedImage?.title}
+                {selectedImage?.image.title}
               </DialogTitle>
               {selectedImage && (
                 <div className="relative w-full h-full flex flex-col">
-                  <div className="flex-1 flex items-center justify-center bg-black/90 p-4">
+                  <div className="flex-1 flex items-center justify-center bg-black/90 p-4 relative">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background/95 text-foreground h-12 w-12 rounded-full"
+                      onClick={handlePrevious}
+                    >
+                      <ChevronLeft className="h-8 w-8" />
+                    </Button>
+                    
                     <img 
-                      src={selectedImage.src} 
-                      alt={selectedImage.title}
+                      src={selectedImage.image.src} 
+                      alt={selectedImage.image.title}
                       className="max-w-full max-h-[85vh] object-contain"
                     />
+                    
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background/95 text-foreground h-12 w-12 rounded-full"
+                      onClick={handleNext}
+                    >
+                      <ChevronRight className="h-8 w-8" />
+                    </Button>
                   </div>
                   <div className="bg-background/95 p-4 border-t">
                     <p className="text-foreground font-medium text-center">
-                      {selectedImage.title}
+                      {selectedImage.image.title}
                     </p>
                   </div>
                 </div>
