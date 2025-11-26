@@ -13,12 +13,12 @@ const Gallery = () => {
     {
       src: fachada1,
       alt: "Fachada do Centro de Imagens Cranio Faciais",
-      title: "Nossa fachada",
+      title: "Fachada",
     },
     {
       src: sala2,
       alt: "Ambiente de atendimento da clínica",
-      title: "Ambiente de atendimento",
+      title: "Entrada",
     },
     {
       src: recepcao3,
@@ -38,12 +38,12 @@ const Gallery = () => {
     {
       src: equipamentoPanoramico2,
       alt: "Sala com equipamento panorâmico",
-      title: "Sala de raio-x panorâmico",
+      title: "Sala de raios-x panorâmico",
     },
     {
       src: cadeiraSalaRaioX,
       alt: "Cadeira odontológica com equipamento de raio-x intra bucal",
-      title: "Sala de raio-x intra bucal",
+      title: "Sala de raios-x intra bucal",
     },
   ];
 
