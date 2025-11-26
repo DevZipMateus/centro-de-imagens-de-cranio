@@ -21,187 +21,140 @@ import tomoFratura21 from "@/assets/tomo-fratura-21.jpg";
 import tomoFratura21Coronal from "@/assets/tomo-fratura-21-coronal.jpg";
 import tomoFratura26Axial from "@/assets/tomo-fratura-26-axial.jpg";
 import tomoLesao from "@/assets/tomo-lesao.jpg";
-
 interface ServiceImage {
   src: string;
   title: string;
 }
-
 interface Service {
   icon: typeof Camera;
   title: string;
   description: string;
   images: ServiceImage[];
 }
-
 const Services = () => {
-  const [selectedImage, setSelectedImage] = useState<{ image: ServiceImage; serviceIndex: number; imageIndex: number } | null>(null);
-
-  const services: Service[] = [
-    {
-      icon: Camera,
-      title: "Radiografias intra bucais",
-      description: "Periapicais, interproximais e oclusais",
-      images: [
-        {
-          src: periapicaisBocaToda,
-          title: "Periapicais de boca toda com interproximais"
-        },
-        {
-          src: radiografiaPeriapical,
-          title: "Radiografia periapical de pré-molares inferiores"
-        },
-        {
-          src: radiografiasPeriapicaisBocaToda,
-          title: "Radiografias periapicais completas"
-        },
-        {
-          src: panoramicaPeriapicais,
-          title: "Panorâmica com periapicais dos incisivos"
-        },
-        {
-          src: radiografiaInterproximal,
-          title: "Radiografia interproximal de pré-molares"
-        },
-        {
-          src: oclusal1,
-          title: "Radiografia oclusal"
-        },
-        {
-          src: oclusal2,
-          title: "Radiografia oclusal"
-        }
-      ]
-    },
-    {
-      icon: XRay,
-      title: "Radiografias extra bucais",
-      description: "Panorâmica, telerradiografias laterais e frontais, ATM",
-      images: [
-        {
-          src: panoramica1,
-          title: "Radiografia panorâmica"
-        },
-        {
-          src: panoramica2,
-          title: "Radiografia panorâmica"
-        },
-        {
-          src: panoramicaPeriapicais,
-          title: "Panorâmica com periapicais"
-        },
-        {
-          src: panoramicaDenticaoMista,
-          title: "Panorâmica de dentição mista"
-        },
-        {
-          src: telerradiografiaFrontal,
-          title: "Telerradiografia frontal"
-        }
-      ]
-    },
-    {
-      icon: Scan,
-      title: "Tomografias volumétricas",
-      description: "Exames 3D de alta precisão",
-      images: [
-        {
-          src: mandibula3d,
-          title: "Imagem 3D de mandíbula"
-        },
-        {
-          src: tomoCanalEntreRaizes,
-          title: "Tomografia de canal entre raízes"
-        },
-        {
-          src: tomoFratura21,
-          title: "Tomografia de fratura no dente 21"
-        },
-        {
-          src: tomoFratura21Coronal,
-          title: "Tomografia coronal - fratura no dente 21"
-        },
-        {
-          src: tomoFratura26Axial,
-          title: "Tomografia axial - fratura no dente 26"
-        },
-        {
-          src: tomoLesao,
-          title: "Tomografia de lesão"
-        }
-      ]
-    }
-  ];
-
+  const [selectedImage, setSelectedImage] = useState<{
+    image: ServiceImage;
+    serviceIndex: number;
+    imageIndex: number;
+  } | null>(null);
+  const services: Service[] = [{
+    icon: Camera,
+    title: "Radiografias intra bucais",
+    description: "Periapicais, interproximais e oclusais",
+    images: [{
+      src: periapicaisBocaToda,
+      title: "Periapicais de boca toda com interproximais"
+    }, {
+      src: radiografiaPeriapical,
+      title: "Radiografia periapical de pré-molares inferiores"
+    }, {
+      src: radiografiasPeriapicaisBocaToda,
+      title: "Radiografias periapicais completas"
+    }, {
+      src: panoramicaPeriapicais,
+      title: "Panorâmica com periapicais dos incisivos"
+    }, {
+      src: radiografiaInterproximal,
+      title: "Radiografia interproximal de pré-molares"
+    }, {
+      src: oclusal1,
+      title: "Radiografia oclusal"
+    }, {
+      src: oclusal2,
+      title: "Radiografia oclusal"
+    }]
+  }, {
+    icon: XRay,
+    title: "Radiografias extra bucais",
+    description: "Panorâmica, telerradiografias laterais e frontais, ATM",
+    images: [{
+      src: panoramica1,
+      title: "Radiografia panorâmica"
+    }, {
+      src: panoramica2,
+      title: "Radiografia panorâmica"
+    }, {
+      src: panoramicaPeriapicais,
+      title: "Panorâmica com periapicais"
+    }, {
+      src: panoramicaDenticaoMista,
+      title: "Panorâmica de dentição mista"
+    }, {
+      src: telerradiografiaFrontal,
+      title: "Telerradiografia frontal"
+    }]
+  }, {
+    icon: Scan,
+    title: "Tomografias volumétricas",
+    description: "Exames 3D de alta precisão",
+    images: [{
+      src: mandibula3d,
+      title: "Imagem 3D de mandíbula"
+    }, {
+      src: tomoCanalEntreRaizes,
+      title: "Tomografia de canal entre raízes"
+    }, {
+      src: tomoFratura21,
+      title: "Tomografia de fratura no dente 21"
+    }, {
+      src: tomoFratura21Coronal,
+      title: "Tomografia coronal - fratura no dente 21"
+    }, {
+      src: tomoFratura26Axial,
+      title: "Tomografia axial - fratura no dente 26"
+    }, {
+      src: tomoLesao,
+      title: "Tomografia de lesão"
+    }]
+  }];
   const handlePrevious = () => {
     if (!selectedImage) return;
-    
     const currentService = services[selectedImage.serviceIndex];
-    const newIndex = selectedImage.imageIndex === 0 
-      ? currentService.images.length - 1 
-      : selectedImage.imageIndex - 1;
-    
+    const newIndex = selectedImage.imageIndex === 0 ? currentService.images.length - 1 : selectedImage.imageIndex - 1;
     setSelectedImage({
       image: currentService.images[newIndex],
       serviceIndex: selectedImage.serviceIndex,
       imageIndex: newIndex
     });
   };
-
   const handleNext = () => {
     if (!selectedImage) return;
-    
     const currentService = services[selectedImage.serviceIndex];
-    const newIndex = selectedImage.imageIndex === currentService.images.length - 1 
-      ? 0 
-      : selectedImage.imageIndex + 1;
-    
+    const newIndex = selectedImage.imageIndex === currentService.images.length - 1 ? 0 : selectedImage.imageIndex + 1;
     setSelectedImage({
       image: currentService.images[newIndex],
       serviceIndex: selectedImage.serviceIndex,
       imageIndex: newIndex
     });
   };
-
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!selectedImage) return;
-      
       if (e.key === 'ArrowLeft') {
         handlePrevious();
       } else if (e.key === 'ArrowRight') {
         handleNext();
       }
     };
-
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [selectedImage]);
-
-  return (
-    <section id="servicos" className="py-20 bg-secondary/30">
+  return <section id="servicos" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               Nossos serviços
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Oferecemos uma ampla gama de exames de imagenologia odontológica para auxiliar no diagnóstico do paciente.
-            </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Oferecemos uma ampla gama de exames de imaginologia odontológica para auxiliar no diagnóstico do paciente.</p>
           </div>
 
           <div className="space-y-12">
             {services.map((service, index) => {
-              return (
-                <div 
-                  key={index} 
-                  className="space-y-6 animate-fade-in"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <Card 
-                    className="hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/50"
-                  >
+            return <div key={index} className="space-y-6 animate-fade-in" style={{
+              animationDelay: `${index * 100}ms`
+            }}>
+                  <Card className="hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/50">
                     <CardHeader>
                       <div>
                         <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
@@ -215,17 +168,13 @@ const Services = () => {
                   <div className="max-w-5xl mx-auto">
                     <Carousel className="w-full">
                       <CarouselContent>
-                        {service.images.map((image, imageIndex) => (
-                          <CarouselItem key={imageIndex}>
-                            <div 
-                              className="relative aspect-video overflow-hidden rounded-lg group cursor-pointer"
-                              onClick={() => setSelectedImage({ image, serviceIndex: index, imageIndex })}
-                            >
-                              <img 
-                                src={image.src} 
-                                alt={image.title} 
-                                className="w-full h-full object-contain bg-muted transition-transform duration-300 group-hover:scale-105" 
-                              />
+                        {service.images.map((image, imageIndex) => <CarouselItem key={imageIndex}>
+                            <div className="relative aspect-video overflow-hidden rounded-lg group cursor-pointer" onClick={() => setSelectedImage({
+                        image,
+                        serviceIndex: index,
+                        imageIndex
+                      })}>
+                              <img src={image.src} alt={image.title} className="w-full h-full object-contain bg-muted transition-transform duration-300 group-hover:scale-105" />
                               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-primary/90 rounded-full p-3">
                                   <ZoomIn className="w-6 h-6 text-primary-foreground" />
@@ -237,16 +186,14 @@ const Services = () => {
                                 </p>
                               </div>
                             </div>
-                          </CarouselItem>
-                        ))}
+                          </CarouselItem>)}
                       </CarouselContent>
                       <CarouselPrevious className="left-2" />
                       <CarouselNext className="right-2" />
                     </Carousel>
                   </div>
-                </div>
-              );
-            })}
+                </div>;
+          })}
           </div>
 
           <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
@@ -254,30 +201,15 @@ const Services = () => {
               <DialogTitle className="sr-only">
                 {selectedImage?.image.title}
               </DialogTitle>
-              {selectedImage && (
-                <div className="relative w-full h-full flex flex-col">
+              {selectedImage && <div className="relative w-full h-full flex flex-col">
                   <div className="flex-1 flex items-center justify-center bg-black/90 p-4 relative">
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background/95 text-foreground h-12 w-12 rounded-full"
-                      onClick={handlePrevious}
-                    >
+                    <Button variant="ghost" size="icon" className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background/95 text-foreground h-12 w-12 rounded-full" onClick={handlePrevious}>
                       <ChevronLeft className="h-8 w-8" />
                     </Button>
                     
-                    <img 
-                      src={selectedImage.image.src} 
-                      alt={selectedImage.image.title}
-                      className="max-w-full max-h-[85vh] object-contain"
-                    />
+                    <img src={selectedImage.image.src} alt={selectedImage.image.title} className="max-w-full max-h-[85vh] object-contain" />
                     
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background/95 text-foreground h-12 w-12 rounded-full"
-                      onClick={handleNext}
-                    >
+                    <Button variant="ghost" size="icon" className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background/95 text-foreground h-12 w-12 rounded-full" onClick={handleNext}>
                       <ChevronRight className="h-8 w-8" />
                     </Button>
                   </div>
@@ -286,14 +218,11 @@ const Services = () => {
                       {selectedImage.image.title}
                     </p>
                   </div>
-                </div>
-              )}
+                </div>}
             </DialogContent>
           </Dialog>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Services;
